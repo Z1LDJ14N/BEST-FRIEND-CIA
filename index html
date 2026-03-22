@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Spesial Cia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffdde1 0%, #ee9ca7 100%);
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* Latar belakang animasi hati */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -100px;
+            background-color: #ffb6c1;
+            width: 20px;
+            height: 20px;
+            transform: rotate(-45deg);
+            animation: float 6s ease-in infinite;
+            opacity: 0.6;
+        }
+
+        .heart::before, .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ffb6c1;
+            border-radius: 50%;
+        }
+
+        .heart::before { top: -10px; left: 0; }
+        .heart::after { left: 10px; top: 0; }
+
+        /* Variasi animasi hati */
+        .heart:nth-child(1) { left: 10%; animation-duration: 5s; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 30%; animation-duration: 7s; animation-delay: 2s; }
+        .heart:nth-child(3) { left: 50%; animation-duration: 6s; animation-delay: 1s; }
+        .heart:nth-child(4) { left: 70%; animation-duration: 8s; animation-delay: 3s; }
+        .heart:nth-child(5) { left: 90%; animation-duration: 5.5s; animation-delay: 0.5s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(-45deg) scale(0.8); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-1000px) rotate(-45deg) scale(1.2); opacity: 0; }
+        }
+
+        /* Kontainer Utama */
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(238, 156, 167, 0.4);
+            margin-bottom: 50px;
+            border: 2px solid #ffb6c1;
+        }
+
+        .message-box h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #d84384;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .message-box p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .sender {
+            margin-top: 15px;
+            font-weight: 600;
+            color: #d84384;
+        }
+
+        /* Galeri Polaroid */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .polaroid {
+            background: white;
+            padding: 15px 15px 40px 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            width: 250px;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border: 1px solid #eee;
+        }
+
+        /* Rotasi acak untuk efek berantakan yang estetik */
+        .polaroid:nth-child(odd) { transform: rotate(-5deg); }
+        .polaroid:nth-child(even) { transform: rotate(5deg); }
+        .polaroid:nth-child(3) { transform: rotate(-3deg); }
+
+        .polaroid:hover {
+            transform: scale(1.1) rotate(0deg);
+            box-shadow: 0 15px 30px rgba(238, 156, 167, 0.6);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hearts">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <div class="container">
+        <div class="message-box">
+            <h1>CIA ADALAH BEST FRIEND TERBAIK SAYA</h1>
+            <p>Semoga selalu jadi best friend yah! ❤️</p>
+            <p class="sender">- Zildjian</p>
+        </div>
+
+        <div class="gallery">
+            <div class="polaroid">
+                <img src="https://autoresbot.com/tmp_files/7572ebbd-8fc6-4b43-a4bd-11d62b2533e5.jpg" alt="Cia 1">
+            </div>
+            <div class="polaroid">
+                <img src="https://autoresbot.com/tmp_files/592d2d16-a961-461e-a4f1-db429df8b879.jpg" alt="Cia 2">
+            </div>
+            <div class="polaroid">
+                <img src="https://autoresbot.com/tmp_files/2d1e2a81-6d56-41bd-8b27-1492b208888e.jpg" alt="Cia 3">
+            </div>
+            <div class="polaroid">
+                <img src="https://autoresbot.com/tmp_files/d9947d3c-9c78-43c8-ad65-239d6f0e8830.jpg" alt="Cia 4">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
